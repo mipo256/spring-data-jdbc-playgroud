@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 import org.assertj.core.api.Assertions;
 import org.example.AbstractIntegrationTest;
 import org.jetbrains.annotations.NotNull;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.jdbc.Sql;
@@ -18,6 +19,7 @@ public class MyEntityRepositoryIntegrationTest extends AbstractIntegrationTest {
     private MyEntityRepository myEntityRepository;
 
     @Test
+    @Disabled // Enable to see what happens
     void whenDynamicProjectsAreInUseViaInterfaces_thenBlast() {
         saveInitialEntity();
         Optional<MyEntityInterfaceProjection> active = myEntityRepository.findProjectionByStatus("active", MyEntityInterfaceProjection.class);

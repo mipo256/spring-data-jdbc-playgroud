@@ -20,6 +20,6 @@ public class RootEntity {
   @CreatedDate
   private OffsetDateTime createdAt;
 
-  @MappedCollection(idColumn = "root_entity_id")
+  @MappedCollection(idColumn = "root_entity_id", keyColumn = "root_entity_id")
   private List<ReferencedEntity> referencedEntities;
 }
