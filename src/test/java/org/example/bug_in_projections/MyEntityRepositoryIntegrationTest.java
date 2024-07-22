@@ -1,18 +1,16 @@
-package org.example.repository;
+package org.example.bug_in_projections;
 
 import java.util.Optional;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.assertj.core.api.Assertions;
 import org.example.AbstractIntegrationTest;
-import org.example.model.MyEntity;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.jdbc.Sql;
 
-@Sql(executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = "classpath:org/example/repository/MyEntityRepositoryIntegrationTest.sql")
+@Sql(executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = "classpath:org/example/bug_in_projections/MyEntityRepositoryIntegrationTest.sql")
 @Sql(executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD, scripts = "classpath:cleanup.sql")
 public class MyEntityRepositoryIntegrationTest extends AbstractIntegrationTest {
 
@@ -59,6 +57,7 @@ public class MyEntityRepositoryIntegrationTest extends AbstractIntegrationTest {
     @Data
     @EqualsAndHashCode(onlyExplicitlyIncluded = true)
     static class MyEntityProjection {
+
         private String status;
 
         @EqualsAndHashCode.Include

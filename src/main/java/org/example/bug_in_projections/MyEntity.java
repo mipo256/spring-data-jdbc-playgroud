@@ -1,13 +1,11 @@
-package org.example.model;
+package org.example.bug_in_projections;
 
 import java.time.Instant;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
-
-import lombok.Data;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Data

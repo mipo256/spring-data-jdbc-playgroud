@@ -1,7 +1,6 @@
-package org.example.repository;
+package org.example.bug_in_projections;
 
 import java.util.Optional;
-import org.example.model.MyEntity;
 import org.springframework.data.repository.CrudRepository;
 
 public interface MyEntityRepository extends CrudRepository<MyEntity, Long> {
